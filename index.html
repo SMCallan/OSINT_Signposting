@@ -165,14 +165,14 @@
                 <div class="resource-grid">
                     <div class="resource-item">
                         <h3>Critical OPSEC Best Practices</h3>
-                        [cite_start]<p>A non-negotiable checklist for maintaining operational integrity and security. [cite: 346]</p>
+                        <p>A non-negotiable checklist for maintaining operational integrity and security.</p>
                         <div class="considerations">
                             <ul>
-                                [cite_start]<li><strong>Isolated Environments:</strong> All OSINT activities must be conducted from dedicated, hardened virtual machines (VMs). [cite: 347]</li>
-                                [cite_start]<li><strong>Prioritize Self-Hosting:</strong> Use self-hosted tools for sensitive investigations to prevent data leakage. [cite: 349]</li>
-                                [cite_start]<li><strong>Network Obfuscation:</strong> All traffic must be routed through approved, non-attributable infrastructure (e.g., VPNs). [cite: 350]</li>
-                                [cite_start]<li><strong>Secure API Key Management:</strong> Use a centralized, secure system for API keys. [cite: 352]</li>
-                                [cite_start]<li><strong>Secure Evidence Handling:</strong> Maintain a clear chain of custody and handle exploit code on sandboxed systems. [cite: 354, 355]</li>
+                                <li><strong>Isolated Environments:</strong> All OSINT activities must be conducted from dedicated, hardened virtual machines (VMs).</li>
+                                <li><strong>Prioritize Self-Hosting:</strong> Use self-hosted tools for sensitive investigations to prevent data leakage.</li>
+                                <li><strong>Network Obfuscation:</strong> All traffic must be routed through approved, non-attributable infrastructure (e.g., VPNs).</li>
+                                <li><strong>Secure API Key Management:</strong> Use a centralized, secure system for API keys.</li>
+                                <li><strong>Secure Evidence Handling:</strong> Maintain a clear chain of custody and handle exploit code on sandboxed systems.</li>
                             </ul>
                         </div>
                     </div>
@@ -185,13 +185,13 @@
                     </div>
                     <div class="resource-item">
                         <h3>Software License Implications</h3>
-                        [cite_start]<p>A quick-reference guide to understanding the legal obligations of the open-source tools being used. [cite: 340, 341]</p>
+                        <p>A quick-reference guide to understanding the legal obligations of the open-source tools being used.</p>
                         <div class="considerations">
                            <ul>
-                               [cite_start]<li><strong>Permissive (MIT, Apache 2.0):</strong> Ideal for government use; allows modification and internal use without restriction. [cite: 342]</li>
-                               <li><strong>Copyleft (GPL):</strong> Internal use is fine. [cite_start]Distribution of modified versions requires source code release. [cite: 342]</li>
-                               [cite_start]<li><strong>Strong Copyleft (AGPL):</strong> If a modified version is provided as a network service, source code must be released. [cite: 342]</li>
-                               [cite_start]<li><strong>Custom (NPSL):</strong> Prohibits redistribution within proprietary software without an OEM license. [cite: 342]</li>
+                               <li><strong>Permissive (MIT, Apache 2.0):</strong> Ideal for government use; allows modification and internal use without restriction.</li>
+                               <li><strong>Copyleft (GPL):</strong> Internal use is fine. Distribution of modified versions requires source code release.</li>
+                               <li><strong>Strong Copyleft (AGPL):</strong> If a modified version is provided as a network service, source code must be released.</li>
+                               <li><strong>Custom (NPSL):</strong> Prohibits redistribution within proprietary software without an OEM license.</li>
                            </ul>
                         </div>
                     </div>
@@ -202,49 +202,49 @@
 
             <section id="phase1">
                 <h2>Phase 1: Passive Reconnaissance & Footprinting</h2>
-                [cite_start]<p class="section-intro">Gather a broad baseline of intelligence without directly interacting with the target's infrastructure, ensuring maximum stealth. [cite: 326, 143]</p>
+                <p class="section-intro">Gather a broad baseline of intelligence without directly interacting with the target's infrastructure, ensuring maximum stealth.</p>
                 <div class="resource-grid">
                      <div class="resource-item">
                         <h3>theHarvester</h3>
-                        [cite_start]<p>A classic command-line tool for passive reconnaissance, [cite: 91] [cite_start]gathering emails, subdomains, and employee names from over 40 public sources like search engines and breach datasets. [cite: 15, 16, 187] [cite_start]It aggregates a wide spectrum of digital footprint data into a single report. [cite: 10]</p>
+                        <p>A classic command-line tool for passive reconnaissance, gathering emails, subdomains, and employee names from over 40 public sources like search engines and breach datasets. It aggregates a wide spectrum of digital footprint data into a single report.</p>
                         <div class="considerations">
                             <ul>
-                                [cite_start]<li><strong>Type:</strong> Passive OSINT [cite: 240]</li>
-                                [cite_start]<li><strong>OPSEC:</strong> Queries to public sources originate from the operator's IP; must be run from a non-attributable network for covert engagements. [cite: 193]</li>
+                                <li><strong>Type:</strong> Passive OSINT</li>
+                                <li><strong>OPSEC:</strong> Queries to public sources originate from the operator's IP; must be run from a non-attributable network for covert engagements.</li>
                             </ul>
                         </div>
                         <a href="https://github.com/laramies/theHarvester" target="_blank">View on GitHub</a>
                     </div>
                     <div class="resource-item">
                         <h3>SpiderFoot</h3>
-                        [cite_start]<p>An automated OSINT reconnaissance tool that queries over 200 data sources [cite: 50] [cite_start]to build a comprehensive profile of a target (IP, domain, email, etc.). [cite: 50]</p>
+                        <p>An automated OSINT reconnaissance tool that queries over 200 data sources to build a comprehensive profile of a target (IP, domain, email, etc.).</p>
                         <div class="considerations">
                             <ul>
-                                [cite_start]<li><strong>Type:</strong> Automated OSINT [cite: 49]</li>
-                                [cite_start]<li><strong>OPSEC:</strong> Use the self-hosted version for maximum data control and to eliminate third-party exposure risk. [cite: 55]</li>
+                                <li><strong>Type:</strong> Automated OSINT</li>
+                                <li><strong>OPSEC:</strong> Use the self-hosted version for maximum data control and to eliminate third-party exposure risk.</li>
                             </ul>
                         </div>
                         <a href="https://www.spiderfoot.net/" target="_blank">Project Home</a>
                     </div>
                     <div class="resource-item">
                         <h3>Social-Analyzer</h3>
-                        [cite_start]<p>A powerful tool to find user profiles across more than 1,000 social networks and websites, [cite: 154] [cite_start]using multi-layer detection like OCR and string analysis. [cite: 155]</p>
+                        <p>A powerful tool to find user profiles across more than 1,000 social networks and websites, using multi-layer detection like OCR and string analysis.</p>
                         <div class="considerations">
                            <ul>
                                <li><strong>Type:</strong> Username Search (SOCMINT)</li>
-                               [cite_start]<li><strong>OPSEC:</strong> Self-host to ensure sensitive search queries are not logged by a third party. [cite: 159]</li>
+                               <li><strong>OPSEC:</strong> Self-host to ensure sensitive search queries are not logged by a third party.</li>
                            </ul>
                         </div>
                         <a href="https://github.com/qeeqbox/social-analyzer" target="_blank">View on GitHub</a>
                     </div>
                      <div class="resource-item">
                         <h3>Wayback Machine</h3>
-                        [cite_start]<p>An invaluable internet archive for viewing historical versions of websites. [cite: 532] [cite_start]It can reveal old pages, files, or staff directories that have since been removed from a target's site. [cite: 533]</p>
+                        <p>An invaluable internet archive for viewing historical versions of websites. It can reveal old pages, files, or staff directories that have since been removed from a target's site.</p>
                         <a href="https://archive.org/web/" target="_blank">Access Archive</a>
                     </div>
                     <div class="resource-item">
                         <h3>ExifTool</h3>
-                        [cite_start]<p>A tool to scrape documents and images for hidden metadata, [cite: 534] [cite_start]which can expose valuable intelligence like author usernames, software versions, and GPS coordinates. [cite: 535]</p>
+                        <p>A tool to scrape documents and images for hidden metadata, which can expose valuable intelligence like author usernames, software versions, and GPS coordinates.</p>
                         <a href="https://exiftool.org/" target="_blank">Project Home</a>
                     </div>
                 </div>
@@ -258,21 +258,21 @@
                 <div class="resource-grid">
                     <div class="resource-item">
                         <h3>WIGLE</h3>
-                        [cite_start]<p>A global, crowdsourced database of Wi-Fi access points and their GPS locations, [cite: 508, 509] [cite_start]essential for identifying a target organization's wireless networks without physical surveying. [cite: 510]</p>
+                        <p>A global, crowdsourced database of Wi-Fi access points and their GPS locations, essential for identifying a target organization's wireless networks without physical surveying.</p>
                         <a href="https://wigle.net/" target="_blank">Access WiGLE</a>
                     </div>
                     <div class="resource-item">
                         <h3>Kismet</h3>
-                        [cite_start]<p>A renowned open-source wireless sniffer and intrusion detection tool that passively monitors and logs Wi-Fi and Bluetooth signals, detecting all networks (including hidden SSIDs). [cite: 511, 512]</p>
+                        <p>A renowned open-source wireless sniffer and intrusion detection tool that passively monitors and logs Wi-Fi and Bluetooth signals, detecting all networks (including hidden SSIDs).</p>
                         <a href="https://www.kismetwireless.net/" target="_blank">Project Home</a>
                     </div>
                     <div class="resource-item">
                         <h3>Wireshark</h3>
-                        [cite_start]<p>The world's most widely used network protocol analyzer for capturing and interactively browsing network traffic. [cite: 53, 212, 213] [cite_start]It can decode thousands of protocols and is invaluable for inspecting captured communications in detail. [cite: 54, 214]</p>
+                        <p>The world's most widely used network protocol analyzer for capturing and interactively browsing network traffic. It can decode thousands of protocols and is invaluable for inspecting captured communications in detail.</p>
                         <div class="considerations">
                            <ul>
-                               [cite_start]<li><strong>Type:</strong> Passive [cite: 240]</li>
-                               [cite_start]<li><strong>OPSEC:</strong> A purely passive tool that does not generate network packets, making it highly stealthy for covert intelligence gathering on a network segment. [cite: 221, 222, 223, 240]</li>
+                               <li><strong>Type:</strong> Passive</li>
+                               <li><strong>OPSEC:</strong> A purely passive tool that does not generate network packets, making it highly stealthy for covert intelligence gathering on a network segment.</li>
                            </ul>
                         </div>
                         <a href="https://www.wireshark.org/" target="_blank">Project Home</a>
@@ -284,32 +284,32 @@
 
             <section id="phase3">
                 <h2>Phase 3: Active Analysis & Vulnerability Discovery</h2>
-                [cite_start]<div class="warning-banner">[!] WARNING: Actions in this phase are OVERT and will be detected by target systems. [cite: 115, 282] Proceed only with full authorization.</div>
+                <div class="warning-banner">[!] WARNING: Actions in this phase are OVERT and will be detected by target systems. Proceed only with full authorization.</div>
                  <div class="resource-grid">
                     <div class="resource-item">
                         <h3>Nmap</h3>
-                        [cite_start]<p>The global standard for active network discovery and security auditing. [cite: 195] [cite_start]It sends packets to discover open ports, running services, and OS versions on target hosts. [cite: 59, 196] [cite_start]Its power is extended by the Nmap Scripting Engine (NSE) which can check for specific vulnerabilities. [cite: 60, 197]</p>
+                        <p>The global standard for active network discovery and security auditing. It sends packets to discover open ports, running services, and OS versions on target hosts. Its power is extended by the Nmap Scripting Engine (NSE) which can check for specific vulnerabilities.</p>
                         <div class="considerations">
                            <ul>
-                               [cite_start]<li><strong>Type:</strong> Active [cite: 240]</li>
-                               [cite_start]<li><strong>OPSEC:</strong> Inherently overt; generates significant, detectable network traffic to the target. [cite: 208, 210]</li>
-                               [cite_start]<li><strong>License:</strong> NPSL, which prohibits redistribution in proprietary products without an OEM license. [cite: 201, 203]</li>
+                               <li><strong>Type:</strong> Active</li>
+                               <li><strong>OPSEC:</strong> Inherently overt; generates significant, detectable network traffic to the target.</li>
+                               <li><strong>License:</strong> NPSL, which prohibits redistribution in proprietary products without an OEM license.</li>
                            </ul>
                         </div>
                         <a href="https://nmap.org/" target="_blank">Project Home</a>
                     </div>
                     <div class="resource-item">
                         <h3>Shodan</h3>
-                        [cite_start]<p>An internet-wide search engine for discovering connected devices like IoT, webcams, databases, and ICS/SCADA systems. [cite: 17, 18, 20] [cite_start]It scans for open ports and banners, helping to identify unsecured services or unpatched systems. [cite: 18, 21]</p>
+                        <p>An internet-wide search engine for discovering connected devices like IoT, webcams, databases, and ICS/SCADA systems. It scans for open ports and banners, helping to identify unsecured services or unpatched systems.</p>
                         <a href="https://www.shodan.io/" target="_blank">Access Shodan</a>
                     </div>
                     <div class="resource-item">
                         <h3>OWASP ZAP</h3>
-                        [cite_start]<p>An essential tool for finding vulnerabilities in web applications. [cite: 8] [cite_start]It acts as a man-in-the-middle proxy to inspect and modify traffic, and includes powerful active and passive scanners to find flaws like SQL injection. [cite: 8, 286, 287]</p>
+                        <p>An essential tool for finding vulnerabilities in web applications. It acts as a man-in-the-middle proxy to inspect and modify traffic, and includes powerful active and passive scanners to find flaws like SQL injection.</p>
                          <div class="considerations">
                            <ul>
                                <li><strong>Type:</strong> Active Scanner / Proxy</li>
-                               [cite_start]<li><strong>OPSEC:</strong> Active scanning is an overt attack and must be authorized. [cite: 291] [cite_start]Passive scanning mode is much lower risk. [cite: 293]</li>
+                               <li><strong>OPSEC:</strong> Active scanning is an overt attack and must be authorized. Passive scanning mode is much lower risk.</li>
                            </ul>
                         </div>
                         <a href="https://www.zaproxy.org/" target="_blank">OWASP Project Page</a>
@@ -321,33 +321,33 @@
 
             <section id="phase4">
                 <h2>Phase 4: Prioritization, Exploitation & Analysis</h2>
-                [cite_start]<p class="section-intro">Make sense of discovered vulnerabilities, validate their impact using threat intelligence, and analyze potentially hostile code. [cite: 269, 309]</p>
+                <p class="section-intro">Make sense of discovered vulnerabilities, validate their impact using threat intelligence, and analyze potentially hostile code.</p>
                  <div class="resource-grid">
                     <div class="resource-item">
                         <h3>CISA KEV Catalog</h3>
-                        [cite_start]<p>The definitive, government-backed list of vulnerabilities that are not just theoretical risks but are proven to be actively exploited by malicious actors in the wild. [cite: 24, 301, 312]</p>
+                        <p>The definitive, government-backed list of vulnerabilities that are not just theoretical risks but are proven to be actively exploited by malicious actors in the wild.</p>
                          <div class="considerations">
                            <ul>
                                <li><strong>Type:</strong> Intelligence Database</li>
-                               <li><strong>Use Case:</strong> This is the primary tool for prioritizing efforts. [cite_start]A vulnerability on the KEV list is a far more urgent threat than one with a high CVSS score but no known exploits. [cite: 305, 314]</li>
+                               <li><strong>Use Case:</strong> This is the primary tool for prioritizing efforts. A vulnerability on the KEV list is a far more urgent threat than one with a high CVSS score but no known exploits.</li>
                            </ul>
                         </div>
                         <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">Access Catalog</a>
                     </div>
                     <div class="resource-item">
                         <h3>Exploit-DB</h3>
-                        [cite_start]<p>One of the largest and most respected public archives of exploit code, shellcode, and proofs-of-concept (PoCs). [cite: 297] [cite_start]It is the primary resource for finding functional code to demonstrate a vulnerability's impact. [cite: 298, 318]</p>
+                        <p>One of the largest and most respected public archives of exploit code, shellcode, and proofs-of-concept (PoCs). It is the primary resource for finding functional code to demonstrate a vulnerability's impact.</p>
                         <div class="considerations">
                            <ul>
                                <li><strong>Type:</strong> Intelligence Database</li>
-                               [cite_start]<li><strong>OPSEC:</strong> All exploit code must be treated as malicious and handled only in a dedicated, sandboxed environment. [cite: 307, 308]</li>
+                               <li><strong>OPSEC:</strong> All exploit code must be treated as malicious and handled only in a dedicated, sandboxed environment.</li>
                            </ul>
                         </div>
                         <a href="https://www.exploit-db.com/" target="_blank">Access Exploit-DB</a>
                     </div>
                     <div class="resource-item">
                         <h3>Ghidra</h3>
-                        [cite_start]<p>A powerful, NSA-developed suite of software reverse engineering tools for deep analysis of malicious code and discovering vulnerabilities. [cite: 235]</p>
+                        <p>A powerful, NSA-developed suite of software reverse engineering tools for deep analysis of malicious code and discovering vulnerabilities.</p>
                         <a href="https://ghidra-sre.org/" target="_blank">Project Home</a>
                     </div>
                  </div>
@@ -361,22 +361,22 @@
                 <div class="resource-grid">
                     <div class="resource-item">
                         <h3>Dark Web Workflow</h3>
-                        [cite_start]<p>A tiered approach for dark web investigations, moving from broad discovery to deep analysis. [cite: 212, 254]</p>
+                        <p>A tiered approach for dark web investigations, moving from broad discovery to deep analysis.</p>
                         <div class="considerations">
                             <ul>
-                                [cite_start]<li><strong>Discovery:</strong> Use <strong>Ahmia.fi</strong> as a search engine to find .onion sites. [cite: 219, 256] [cite_start]<em>Must be accessed via its .onion address.</em> [cite: 224]</li>
-                                [cite_start]<li><strong>Targeted Analysis:</strong> Use <strong>OnionScan</strong> to probe a specific hidden service for OPSEC weaknesses. [cite: 227, 259]</li>
-                                [cite_start]<li><strong>Mass Collection:</strong> Use <strong>OWASP TorBot</strong> to crawl and scrape data from thousands of sites. [cite: 242, 262]</li>
+                                <li><strong>Discovery:</strong> Use <strong>Ahmia.fi</strong> as a search engine to find .onion sites. <em>Must be accessed via its .onion address.</em></li>
+                                <li><strong>Targeted Analysis:</strong> Use <strong>OnionScan</strong> to probe a specific hidden service for OPSEC weaknesses.</li>
+                                <li><strong>Mass Collection:</strong> Use <strong>OWASP TorBot</strong> to crawl and scrape data from thousands of sites.</li>
                            </ul>
                         </div>
                         <a href="https://www.ahmia.fi/" target="_blank">Access Ahmia</a>
                     </div>
                     <div class="resource-item">
                         <h3>Maltego</h3>
-                        [cite_start]<p>The industry standard for graphical link analysis, [cite: 35] [cite_start]creating interactive maps to visualize and discover complex relationships between hosts, people, and other data points gathered throughout an investigation. [cite: 35, 338]</p>
+                        <p>The industry standard for graphical link analysis, creating interactive maps to visualize and discover complex relationships between hosts, people, and other data points gathered throughout an investigation.</p>
                         <div class="considerations">
                            <ul>
-                               <li><strong>OPSEC:</strong> High Risk. [cite_start]Queries are processed through Maltego's commercial servers, exposing investigation metadata. [cite: 44, 45, 46] [cite_start]Best suited for the final analysis phase when data points are less sensitive. [cite: 82]</li>
+                               <li><strong>OPSEC:</strong> High Risk. Queries are processed through Maltego's commercial servers, exposing investigation metadata. Best suited for the final analysis phase when data points are less sensitive.</li>
                            </ul>
                         </div>
                         <a href="https://www.maltego.com/" target="_blank">Access Platform</a>
