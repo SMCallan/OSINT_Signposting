@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MET Cyber Ops Dashboard</title>
+    <style>
+        :root {
+            --bg-color: #1a1a1c;
+            --primary-text: #e0e0e0;
+            --header-text: #ffffff;
+            --accent-blue: #0078D4;
+            --border-color: #333;
+            --card-bg: #252526;
+        }
+
+        body {
+            font-family: 'Consolas', 'Courier New', monospace;
+            background-color: var(--bg-color);
+            color: var(--primary-text);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--accent-blue);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            color: var(--header-text);
+            font-size: 2.5em;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            color: var(--accent-blue);
+            font-size: 1.2em;
+            margin-top: 5px;
+        }
+
+        h2 {
+            color: var(--header-text);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .resource-item {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--accent-blue);
+            padding: 15px;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .resource-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 120, 212, 0.2);
+        }
+
+        .resource-item h3 {
+            margin: 0 0 10px 0;
+            color: var(--header-text);
+        }
+        
+        .resource-item p {
+            margin: 0 0 15px 0;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+
+        .resource-item a {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--accent-blue);
+            font-weight: bold;
+            padding: 5px 0;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .resource-item a:hover {
+            border-bottom: 1px solid var(--accent-blue);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>METROPOLITAN POLICE</h1>
+            <p>Cyber Crime Unit // Operator Dashboard</p>
+        </header>
+
+        <main>
+            <h2>UK Legal & Policy Framework</h2>
+            <div class="resource-grid">
+                <div class="resource-item">
+                    <h3>Computer Misuse Act 1990</h3>
+                    <p>Core legislation defining offences of unauthorised access to computer material. Essential for understanding legal boundaries.</p>
+                    <a href="https://www.legislation.gov.uk/ukpga/1990/18/contents" target="_blank">Access Legislation</a>
+                </div>
+                <div class="resource-item">
+                    <h3>Investigatory Powers Act 2016</h3>
+                    <p>Provides the legal framework for the use of investigatory powers, including equipment interference (hacking).</p>
+                    <a href="https://www.legislation.gov.uk/ukpga/2016/25/contents" target="_blank">Access Legislation</a>
+                </div>
+                <div class="resource-item">
+                    <h3>College of Policing - Cybercrime</h3>
+                    <p>Authorised Professional Practice (APP) on digital investigation, intelligence, and operational standards.</p>
+                    <a href="https://www.college.police.uk/app/investigation/cybercrime" target="_blank">View APP</a>
+                </div>
+            </div>
+
+            <h2>Threat Intelligence & OSINT</h2>
+            <div class="resource-grid">
+                <div class="resource-item">
+                    <h3>NCSC Threat Reports</h3>
+                    <p>Official threat intelligence and advisories from the UK's National Cyber Security Centre.</p>
+                    <a href="https://www.ncsc.gov.uk/section/keep-up-to-date/reports-advisories-and-assessments" target="_blank">View Reports</a>
+                </div>
+                <div class="resource-item">
+                    <h3>CVE Database</h3>
+                    <p>The definitive public list of Common Vulnerabilities and Exposures for identifying known software flaws.</p>
+                    <a href="https://cve.mitre.org/" target="_blank">Search CVEs</a>
+                </div>
+                <div class="resource-item">
+                    <h3>National Vulnerability Database</h3>
+                    <p>The NVD enriches CVE data with CVSS scores, fix information, and detailed analysis.</p>
+                    <a href="https://nvd.nist.gov/" target="_blank">Access NVD</a>
+                </div>
+            </div>
+
+            <h2>Exploit Research & Development</h2>
+            <div class="resource-grid">
+                <div class="resource-item">
+                    <h3>Exploit-DB</h3>
+                    <p>A comprehensive archive of public exploits and shellcode. Crucial for researching PoCs.</p>
+                    <a href="https://www.exploit-db.com/" target="_blank">Search Exploits</a>
+                </div>
+                <div class="resource-item">
+                    <h3>Ghidra SRE</h3>
+                    <p>NSA-developed suite of software reverse engineering tools for analysing malicious code and vulnerabilities.</p>
+                    <a href="https://ghidra-sre.org/" target="_blank">Get Ghidra</a>
+                </div>
+                <div class="resource-item">
+                    <h3>GDB (GNU Debugger)</h3>
+                    <p>The standard debugger for analysing program execution, memory, and registers during vulnerability research.</p>
+                    <a href="https://www.gnu.org/software/gdb/" target="_blank">Documentation</a>
+                </div>
+            </div>
+
+            <h2>Operational Toolkit</h2>
+            <div class="resource-grid">
+                <div class="resource-item">
+                    <h3>Metasploit Framework</h3>
+                    <p>The world's leading penetration testing framework for developing, testing, and executing exploit code.</p>
+                    <a href="https://www.metasploit.com/" target="_blank">Framework Home</a>
+                </div>
+                <div class="resource-item">
+                    <h3>Wireshark</h3>
+                    <p>Essential network protocol analyzer for inspecting traffic, identifying command-and-control (C2) channels, and data exfiltration.</p>
+                    <a href="https://www.wireshark.org/" target="_blank">Download Wireshark</a>
+                </div>
+                <div class="resource-item">
+                    <h3>Autopsy</h3>
+                    <p>A leading open-source digital forensics platform for analysing seized hard drives, memory images, and mobile devices.</p>
+                    <a href="https://www.autopsy.com/" target="_blank">Get Autopsy</a>
+                </div>
+            </div>
+
+            <h2>UK & International Partners</h2>
+            <div class="resource-grid">
+                <div class="resource-item">
+                    <h3>National Crime Agency (NCA)</h3>
+                    <p>The NCA leads the UK's fight against serious and organised crime, including the National Cyber Crime Unit (NCCU).</p>
+                    <a href="https://www.nationalcrimeagency.gov.uk/" target="_blank">Visit NCA</a>
+                </div>
+                <div class="resource-item">
+                    <h3>Europol (EC3)</h3>
+                    <p>The European Cybercrime Centre, facilitating cross-border operations and intelligence sharing against criminal networks.</p>
+                    <a href="https://www.europol.europa.eu/crime-areas-and-trends/crime-areas/cybercrime" target="_blank">Visit EC3</a>
+                </div>
+                <div class="resource-item">
+                    <h3>Interpol</h3>
+                    <p>Global partner for coordinating operations and sharing data on transnational cybercrime threats.</p>
+                    <a href="https://www.interpol.int/Crimes/Cybercrime" target="_blank">Visit Interpol</a>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>This resource is for authorised use only. All activities must be conducted under lawful authority and in accordance with Home Office and MET policy.</p>
+            <p>&copy; 2025 - Restricted</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
