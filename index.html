@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MET Cyber Ops Dashboard</title>
+    <title>STAC Hub</title>
     <style>
         :root {
             --bg-color: #1a1a1c;
             --primary-text: #e0e0e0;
             --header-text: #ffffff;
             --accent-blue: #0078D4;
+            --accent-green: #2b913a;
             --border-color: #333;
             --card-bg: #252526;
+            --note-bg: #3c3c3c;
         }
 
         body {
@@ -23,7 +25,7 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 10px;
         }
@@ -54,10 +56,16 @@
             padding-bottom: 10px;
             margin-top: 40px;
         }
+        
+        .section-intro {
+            font-style: italic;
+            color: #aaa;
+            margin-bottom: 25px;
+        }
 
         .resource-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 20px;
         }
 
@@ -65,7 +73,9 @@
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-left: 5px solid var(--accent-blue);
-            padding: 15px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
 
@@ -76,13 +86,22 @@
 
         .resource-item h3 {
             margin: 0 0 10px 0;
-            color: var(--header-text);
+            color: var(--accent-green);
         }
         
         .resource-item p {
             margin: 0 0 15px 0;
             font-size: 0.9em;
-            line-height: 1.4;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .resource-item .considerations {
+            background-color: var(--note-bg);
+            border-left: 3px solid var(--accent-green);
+            padding: 10px;
+            font-size: 0.85em;
+            margin-top: 10px;
         }
 
         .resource-item a {
@@ -93,6 +112,7 @@
             padding: 5px 0;
             border-bottom: 1px solid transparent;
             transition: border-color 0.2s;
+            margin-top: auto;
         }
 
         .resource-item a:hover {
@@ -112,110 +132,166 @@
 
     <div class="container">
         <header>
-            <h1>METROPOLITAN POLICE</h1>
-            <p>Cyber Crime Unit // Operator Dashboard</p>
+            <h1>STRATEGIC THREAT ANALYSIS CONSOLE</h1>
+            <p>Situational Awareness & Resource Hub</p>
         </header>
 
         <main>
-            <h2>UK Legal & Policy Framework</h2>
+            <h2>Core OSINT Investigation Frameworks</h2>
+            [cite_start]<p class="section-intro">Frameworks serve as the central workbench for an analyst, aggregating data from disparate sources and visualizing hidden connections[cite: 124].</p>
             <div class="resource-grid">
                 <div class="resource-item">
-                    <h3>Computer Misuse Act 1990</h3>
-                    <p>Core legislation defining offences of unauthorised access to computer material. Essential for understanding legal boundaries.</p>
-                    <a href="https://www.legislation.gov.uk/ukpga/1990/18/contents" target="_blank">Access Legislation</a>
+                    <h3>Maltego (Community/Basic+)</h3>
+                    [cite_start]<p>A powerful graph-based OSINT tool for mapping relationships between people, organizations, and infrastructure[cite: 8]. [cite_start]It uses "Transforms" to query data sources and visually link entities[cite: 8, 129]. [cite_start]The free Basic+ plan, available to government users, offers significantly more capability than the standard free tier, including 10x the data credits[cite: 102, 133].</p>
+                    <div class="considerations"><strong>OPSEC:</strong> High Risk. [cite_start]Maltego is a cloud-based platform; all queries are sent to Maltego servers, exposing investigation metadata to a third party[cite: 137, 138, 139]. [cite_start]Suitable for low-to-medium sensitivity cases[cite: 177].</div>
+                    <a href="https://www.maltego.com/" target="_blank">Access Platform</a>
                 </div>
                 <div class="resource-item">
-                    <h3>Investigatory Powers Act 2016</h3>
-                    <p>Provides the legal framework for the use of investigatory powers, including equipment interference (hacking).</p>
-                    <a href="https://www.legislation.gov.uk/ukpga/2016/25/contents" target="_blank">Access Legislation</a>
+                    <h3>SpiderFoot</h3>
+                    [cite_start]<p>An automated OSINT reconnaissance tool that queries over 200 data sources to profile a target (IP, domain, email, etc.)[cite: 143]. [cite_start]It can be operated via a web UI or CLI and is ideal for broad-spectrum intel gathering with minimal effort[cite: 9, 144].</p>
+                    [cite_start]<div class="considerations"><strong>OPSEC:</strong> Low Risk (when self-hosted)[cite: 177]. [cite_start]Self-hosting ensures data sovereignty and eliminates third-party exposure risk[cite: 148, 151]. [cite_start]However, individual module queries to external APIs can leave a footprint and must be routed through secure infrastructure[cite: 154]. [cite_start]Licensed under the permissive MIT License[cite: 146].</div>
+                    <a href="https://www.spiderfoot.net/" target="_blank">Project Home</a>
                 </div>
                 <div class="resource-item">
-                    <h3>College of Policing - Cybercrime</h3>
-                    <p>Authorised Professional Practice (APP) on digital investigation, intelligence, and operational standards.</p>
-                    <a href="https://www.college.police.uk/app/investigation/cybercrime" target="_blank">View APP</a>
+                    <h3>Recon-ng</h3>
+                    [cite_start]<p>A modular web reconnaissance framework in a CLI interface that automates data collection from multiple APIs[cite: 10, 11]. [cite_start]It includes numerous modules for gathering info on domains, IPs, hostnames, and social profiles[cite: 11]. [cite_start]Its scripting and customization make it a flexible all-in-one recon platform[cite: 11].</p>
+                    <a href="https://github.com/lanmaster53/recon-ng" target="_blank">View on GitHub</a>
+                </div>
+                <div class="resource-item">
+                    <h3>OSINT Framework</h3>
+                    [cite_start]<p>Not a tool, but an interactive mind map of OSINT resources, organizing hundreds of free tools and sites into logical categories[cite: 156, 157]. [cite_start]It serves as an essential reference for discovering the best tool for a specific task[cite: 161, 163].</p>
+                    [cite_start]<div class="considerations"><strong>OPSEC:</strong> Low Risk (for the site itself)[cite: 177]. [cite_start]The risk is transferred to the third-party tools the user navigates to, which must be independently vetted[cite: 168, 177].</div>
+                    <a href="https://osintframework.com/" target="_blank">Access Framework</a>
                 </div>
             </div>
 
-            <h2>Threat Intelligence & OSINT</h2>
+            <h2>Domain & Infrastructure Reconnaissance</h2>
+            [cite_start]<p class="section-intro">Mapping a target's external digital footprint by discovering domains, subdomains, IPs, and exposed services is a foundational first step in security engagements[cite: 14, 180].</p>
             <div class="resource-grid">
                 <div class="resource-item">
-                    <h3>NCSC Threat Reports</h3>
-                    <p>Official threat intelligence and advisories from the UK's National Cyber Security Centre.</p>
-                    <a href="https://www.ncsc.gov.uk/section/keep-up-to-date/reports-advisories-and-assessments" target="_blank">View Reports</a>
+                    <h3>theHarvester</h3>
+                    [cite_start]<p>A classic command-line tool for passive reconnaissance, gathering emails, subdomains, and employee names from over 40 public sources like search engines and breach datasets[cite: 15, 16, 187]. [cite_start]It aggregates a wide spectrum of digital footprint data into a single report[cite: 103].</p>
+                    [cite_start]<div class="considerations"><strong>Recon Type:</strong> Passive [cite: 240][cite_start].<br><strong>OPSEC:</strong> Queries to public sources originate from the operator's IP[cite: 192, 240]. [cite_start]Must be run from a non-attributable network for covert engagements[cite: 193].</div>
+                    <a href="https://github.com/laramies/theHarvester" target="_blank">View on GitHub</a>
                 </div>
                 <div class="resource-item">
-                    <h3>CVE Database</h3>
-                    <p>The definitive public list of Common Vulnerabilities and Exposures for identifying known software flaws.</p>
-                    <a href="https://cve.mitre.org/" target="_blank">Search CVEs</a>
+                    <h3>Nmap</h3>
+                    [cite_start]<p>The global standard for active network discovery and security auditing[cite: 195]. [cite_start]It sends packets to discover open ports, running services, and OS versions on target hosts[cite: 59, 196]. [cite_start]Its power is extended by the Nmap Scripting Engine (NSE) which can check for specific vulnerabilities[cite: 60, 197].</p>
+                    [cite_start]<div class="considerations"><strong>Recon Type:</strong> Active [cite: 240][cite_start].<br><strong>OPSEC:</strong> Inherently overt[cite: 208]. [cite_start]Generates significant, detectable network traffic[cite: 208, 240]. [cite_start]Use must be authorized [cite: 210, 240][cite_start].<br><strong>License:</strong> NPSL, which prohibits redistribution in proprietary products without an OEM license[cite: 201, 203].</div>
+                    <a href="https://nmap.org/" target="_blank">Project Home</a>
                 </div>
                 <div class="resource-item">
-                    <h3>National Vulnerability Database</h3>
-                    <p>The NVD enriches CVE data with CVSS scores, fix information, and detailed analysis.</p>
-                    <a href="https://nvd.nist.gov/" target="_blank">Access NVD</a>
+                    <h3>Shodan</h3>
+                    [cite_start]<p>An internet-wide search engine for discovering connected devices like IoT, webcams, databases, and ICS/SCADA systems[cite: 17, 18, 20]. [cite_start]It scans for open ports and banners, helping to identify unsecured services or unpatched systems[cite: 18, 21].</p>
+                    <a href="https://www.shodan.io/" target="_blank">Access Shodan</a>
+                </div>
+                 <div class="resource-item">
+                    <h3>OWASP Amass</h3>
+                    [cite_start]<p>Automates subdomain enumeration and external asset mapping[cite: 22]. [cite_start]It uses passive databases and active scraping to build a comprehensive map of a target's infrastructure, helping to uncover shadow IT[cite: 23].</p>
+                    <a href="https://github.com/owasp-amass/amass" target="_blank">View on GitHub</a>
+                </div>
+                 <div class="resource-item">
+                    <h3>Wireshark</h3>
+                    [cite_start]<p>The world's most widely used network protocol analyzer for capturing and interactively browsing network traffic[cite: 53, 212, 213]. [cite_start]It can decode thousands of protocols and is invaluable for inspecting captured communications in detail[cite: 54, 214].</p>
+                    [cite_start]<div class="considerations"><strong>Recon Type:</strong> Passive[cite: 240].<br><strong>OPSEC:</strong> Excellent. [cite_start]It is a purely passive tool that does not generate network packets, making it highly stealthy for covert intelligence gathering on a network segment[cite: 221, 222, 223, 240].</div>
+                    <a href="https://www.wireshark.org/" target="_blank">Project Home</a>
                 </div>
             </div>
 
-            <h2>Exploit Research & Development</h2>
+            <h2>Social Media & People OSINT (SOCMINT)</h2>
+            [cite_start]<p class="section-intro">The ethical collection and analysis of publicly available information from social media to investigate individuals' online presence and social footprints[cite: 26, 242].</p>
             <div class="resource-grid">
+                 <div class="resource-item">
+                    <h3>Social-Analyzer</h3>
+                    [cite_start]<p>A powerful open-source tool designed to find user profiles across more than 1,000 social networks and websites[cite: 247]. [cite_start]It employs multi-layer detection techniques, including OCR for images and metadata extraction[cite: 248].</p>
+                     [cite_start]<div class="considerations"><strong>OPSEC:</strong> Best when self-hosted using Docker, which ensures sensitive search queries are not logged by third parties[cite: 105, 248, 252]. [cite_start]Outbound traffic must be routed through a non-attributable IP [cite: 259][cite_start].<br><strong>License:</strong> AGPL-3.0, a strong copyleft license[cite: 250, 253].</div>
+                    <a href="https://github.com/qeeqbox/social-analyzer" target="_blank">View on GitHub</a>
+                </div>
+                <div class="resource-item">
+                    <h3>Sherlock</h3>
+                    [cite_start]<p>A popular Python tool that finds a person's usernames across hundreds of social media platforms[cite: 27]. [cite_start]Given a single username, it quickly enumerates where that handle is in use to map an individual's accounts[cite: 28].</p>
+                    <a href="https://github.com/sherlock-project/sherlock" target="_blank">View on GitHub</a>
+                </div>
+                 <div class="resource-item">
+                    <h3>GHunt</h3>
+                    [cite_start]<p>An OSINT tool for extracting information from a Google account using only the target's Gmail address[cite: 31]. [cite_start]It can uncover public Google Photos, YouTube channels, calendar IDs, and connected services to profile a target's Google footprint[cite: 32].</p>
+                    <a href="https://github.com/mxrch/ghunt" target="_blank">View on GitHub</a>
+                </div>
+                <div class="resource-item">
+                    <h3>Google Dorking</h3>
+                    [cite_start]<p>An indispensable OSINT technique using advanced search operators (e.g., site:, filetype:, inurl:) to find sensitive information not accessible through simple searches[cite: 69, 280, 281]. [cite_start]It is extremely effective for discovering exposed files, login pages, and misconfigured sites[cite: 70, 283].</p>
+                     [cite_start]<div class="considerations"><strong>OPSEC:</strong> All searches are logged by the search engine provider[cite: 289]. [cite_start]Requires use of a secure, non-attributable connection and browser session for any sensitive research[cite: 290].</div>
+                    <a href="https://www.exploit-db.com/google-hacking-database" target="_blank">Google Hacking Database</a>
+                </div>
+            </div>
+            
+            <h2>Dark Web Investigation</h2>
+            [cite_start]<p class="section-intro">Investigations involving Tor hidden services require specialized tools and a disciplined methodology, starting with safe discovery and moving to targeted analysis[cite: 304, 305].</p>
+            <div class="resource-grid">
+                <div class="resource-item">
+                    <h3>Ahmia.fi</h3>
+                    [cite_start]<p>A reputable public search engine for Tor hidden services, accessible from the clearnet or a .onion address[cite: 38, 308, 309]. [cite_start]It serves as a relatively safe entry point for dark web discovery and actively filters abusive content[cite: 310, 312, 314].</p>
+                     [cite_start]<div class="considerations"><strong>Phase:</strong> Discovery [cite: 359][cite_start].<br><strong>OPSEC:</strong> Mandatory to access via its .onion address from the Tor Browser for operational use[cite: 317]. [cite_start]Search queries are logged by the provider[cite: 318, 359].</div>
+                    <a href="https://www.ahmia.fi/" target="_blank">Access Ahmia</a>
+                </div>
+                <div class="resource-item">
+                    <h3>OnionScan</h3>
+                    [cite_start]<p>A command-line tool designed to conduct deep technical analysis of a .onion site to identify OPSEC failures[cite: 320]. [cite_start]It can find data leaks or configuration errors that could de-anonymize a service's operator[cite: 321].</p>
+                     [cite_start]<div class="considerations"><strong>Phase:</strong> Targeted Analysis [cite: 359][cite_start].<br><strong>OPSEC:</strong> Active scanning is detectable by the target hidden service[cite: 332, 359]. [cite_start]Operator identity is protected by Tor[cite: 332].</div>
+                    <a href="https://onionscan.org/" target="_blank">Project Home</a>
+                </div>
+                <div class="resource-item">
+                    <h3>OWASP TorBot</h3>
+                    [cite_start]<p>An open-source Python crawler designed to automate the discovery and scraping of content from .onion sites[cite: 40, 335]. [cite_start]It follows links recursively to extract data like other onion links and email addresses[cite: 336].</p>
+                     [cite_start]<div class="considerations"><strong>Phase:</strong> Mass Collection [cite: 359][cite_start].<br><strong>OPSEC:</strong> Generates high-volume, noisy traffic[cite: 345, 359]. [cite_start]Must be run from a dedicated, isolated, and non-attributable system[cite: 346, 359].</div>
+                    <a href="https://owasp.org/www-project-torbot/" target="_blank">OWASP Project Page</a>
+                </div>
+                 <div class="resource-item">
+                    <h3>Intelligence X</h3>
+                    [cite_start]<p>A search engine that indexes content from the public web, data breaches, and the dark web[cite: 35]. [cite_start]It allows queries by email, domain, IP, etc., to find matching records in leaked databases or onion sites, and it archives results for historical lookup[cite: 36, 37].</p>
+                    <a href="https://intelx.io/" target="_blank">Access Intelligence X</a>
+                </div>
+            </div>
+
+            <h2>Vulnerability Scanning & Exploit Research</h2>
+            [cite_start]<p class="section-intro">Modern vulnerability management is a threat-informed discipline focused on prioritization[cite: 363]. [cite_start]It combines powerful scanning tools with intelligence resources to understand which vulnerabilities are most critical[cite: 362].</p>
+            <div class="resource-grid">
+                 <div class="resource-item">
+                    <h3>OpenVAS (Greenbone Community Edition)</h3>
+                    [cite_start]<p>A comprehensive, free open-source vulnerability scanner[cite: 61, 366]. [cite_start]Its community feed is updated daily with tests for over 80,000 vulnerabilities[cite: 368]. [cite_start]The entire framework can be deployed on-premises, ensuring scan data remains secure[cite: 372].</p>
+                    [cite_start]<div class="considerations"><strong>Type:</strong> Active Scanner [cite: 414][cite_start].<br><strong>OPSEC:</strong> Activity is highly overt and will be logged[cite: 375]. [cite_start]Use must be restricted to fully authorized engagements[cite: 376].</div>
+                    <a href="https://www.openvas.org/" target="_blank">Project Home</a>
+                </div>
+                <div class="resource-item">
+                    <h3>OWASP ZAP (Zed Attack Proxy)</h3>
+                    [cite_start]<p>One of the world's most popular free security tools for finding vulnerabilities in web applications and APIs[cite: 378]. [cite_start]It acts as a man-in-the-middle proxy to inspect and modify traffic and includes powerful active and passive scanners[cite: 379, 380].</p>
+                    [cite_start]<div class="considerations"><strong>Type:</strong> Active Scanner / Proxy [cite: 414][cite_start].<br><strong>OPSEC:</strong> Active scanning and fuzzing features are overt and detectable[cite: 384]. [cite_start]Passive scanning mode is much lower risk[cite: 386].</div>
+                    <a href="https://www.zaproxy.org/" target="_blank">OWASP Project Page</a>
+                </div>
+                <div class="resource-item">
+                    <h3>CISA KEV Catalog</h3>
+                    [cite_start]<p>An authoritative catalog from the US CISA listing only vulnerabilities that have evidence of being actively exploited in the wild[cite: 106, 392, 394]. [cite_start]It is the primary tool for prioritizing remediation and ethical hacking efforts based on real-world threat intelligence[cite: 117, 414].</p>
+                    [cite_start]<div class="considerations"><strong>Type:</strong> Intelligence Database [cite: 414][cite_start].<br><strong>Use Case:</strong> A vulnerability in the KEV catalog represents a clear and proven danger and should be the highest priority[cite: 398].</div>
+                    <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">Access Catalog</a>
+                </div>
                 <div class="resource-item">
                     <h3>Exploit-DB</h3>
-                    <p>A comprehensive archive of public exploits and shellcode. Crucial for researching PoCs.</p>
-                    <a href="https://www.exploit-db.com/" target="_blank">Search Exploits</a>
+                    [cite_start]<p>One of the largest and most respected public archives of exploit code, shellcode, and proofs-of-concept (PoCs), maintained by Offensive Security[cite: 390]. [cite_start]It is the primary resource for finding functional code to demonstrate a vulnerability's impact[cite: 391].</p>
+                    [cite_start]<div class="considerations"><strong>Type:</strong> Intelligence Database [cite: 414][cite_start].<br><strong>OPSEC:</strong> All downloaded exploit code must be treated as potentially malicious and handled only in a dedicated, sandboxed environment[cite: 401].</div>
+                    <a href="https://www.exploit-db.com/" target="_blank">Access Exploit-DB</a>
                 </div>
-                <div class="resource-item">
-                    <h3>Ghidra SRE</h3>
-                    <p>NSA-developed suite of software reverse engineering tools for analysing malicious code and vulnerabilities.</p>
-                    <a href="https://ghidra-sre.org/" target="_blank">Get Ghidra</a>
-                </div>
-                <div class="resource-item">
-                    <h3>GDB (GNU Debugger)</h3>
-                    <p>The standard debugger for analysing program execution, memory, and registers during vulnerability research.</p>
-                    <a href="https://www.gnu.org/software/gdb/" target="_blank">Documentation</a>
+                 <div class="resource-item">
+                    <h3>SearchSploit</h3>
+                    [cite_start]<p>A command-line tool for offline searching of the Exploit-DB database[cite: 63]. [cite_start]It allows an operator to quickly find exploit code by software name, version, or CVE number once a vulnerability has been identified[cite: 63, 64].</p>
+                    <a href="https://www.exploit-db.com/searchsploit" target="_blank">View Manual</a>
                 </div>
             </div>
 
-            <h2>Operational Toolkit</h2>
-            <div class="resource-grid">
-                <div class="resource-item">
-                    <h3>Metasploit Framework</h3>
-                    <p>The world's leading penetration testing framework for developing, testing, and executing exploit code.</p>
-                    <a href="https://www.metasploit.com/" target="_blank">Framework Home</a>
-                </div>
-                <div class="resource-item">
-                    <h3>Wireshark</h3>
-                    <p>Essential network protocol analyzer for inspecting traffic, identifying command-and-control (C2) channels, and data exfiltration.</p>
-                    <a href="https://www.wireshark.org/" target="_blank">Download Wireshark</a>
-                </div>
-                <div class="resource-item">
-                    <h3>Autopsy</h3>
-                    <p>A leading open-source digital forensics platform for analysing seized hard drives, memory images, and mobile devices.</p>
-                    <a href="https://www.autopsy.com/" target="_blank">Get Autopsy</a>
-                </div>
-            </div>
-
-            <h2>UK & International Partners</h2>
-            <div class="resource-grid">
-                <div class="resource-item">
-                    <h3>National Crime Agency (NCA)</h3>
-                    <p>The NCA leads the UK's fight against serious and organised crime, including the National Cyber Crime Unit (NCCU).</p>
-                    <a href="https://www.nationalcrimeagency.gov.uk/" target="_blank">Visit NCA</a>
-                </div>
-                <div class="resource-item">
-                    <h3>Europol (EC3)</h3>
-                    <p>The European Cybercrime Centre, facilitating cross-border operations and intelligence sharing against criminal networks.</p>
-                    <a href="https://www.europol.europa.eu/crime-areas-and-trends/crime-areas/cybercrime" target="_blank">Visit EC3</a>
-                </div>
-                <div class="resource-item">
-                    <h3>Interpol</h3>
-                    <p>Global partner for coordinating operations and sharing data on transnational cybercrime threats.</p>
-                    <a href="https://www.interpol.int/Crimes/Cybercrime" target="_blank">Visit Interpol</a>
-                </div>
-            </div>
         </main>
 
         <footer>
-            <p>This resource is for authorised use only. All activities must be conducted under lawful authority and in accordance with Home Office and MET policy.</p>
-            <p>&copy; 2025 - Restricted</p>
+            <p>All operations must be conducted in strict accordance with applicable legal frameworks and authorised mandates. Adherence to operational security protocols is paramount.</p>
+            <p>&copy; 2025 - For Authorised Personnel Only</p>
         </footer>
 
     </div>
